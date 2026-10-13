@@ -1,0 +1,129 @@
+/* Shared page-width and hero harmonization.
+   Keeps PO Creation and Amendments visually consistent while giving each a distinct scene. */
+#page-po-creation {
+  box-sizing: border-box;
+  width: 100%;
+}
+#page-po-creation .poc-page-wrap {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+}
+#page-po-creation .poc-hero {
+  min-height: 244px;
+  padding: 30px 36px;
+  border-radius: 25px;
+  background-color: #082850;
+  background-image:
+    linear-gradient(102deg, rgba(4,22,54,.92) 0%, rgba(7,31,70,.86) 34%, rgba(8,35,75,.59) 57%, rgba(7,27,58,.15) 100%),
+    linear-gradient(0deg, rgba(3,18,43,.16) 0%, rgba(3,18,43,0) 58%),
+    url('assets/po-creation-hero.webp');
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: cover, cover, cover;
+  background-position: center, center, center 52%;
+}
+
+/* Match the hero's dimensions and copy/art balance to the Amendments hero at the same viewport. */
+@media (max-width: 1280px) {
+  #page-po-creation .poc-hero {
+    padding: 25px 27px;
+  }
+}
+@media (max-width: 1050px) {
+  #page-po-creation .poc-hero {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 185px;
+    min-height: 202px;
+    padding: 23px 22px;
+    border-radius: 23px;
+    background-position: center, center, 58% center;
+  }
+  #page-po-creation .poc-hero-art {
+    width: 205px;
+    transform: scale(.86);
+    transform-origin: right center;
+    margin-right: -7px;
+  }
+}
+@media (max-width: 760px) {
+  #page-po-creation .poc-hero {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 112px;
+    gap: 2px;
+    min-height: 202px;
+    padding: 22px 17px;
+    border-radius: 0 0 20px 20px;
+    background-position: center, center, 60% center;
+  }
+  #page-po-creation .poc-hero h1 {
+    font-size: clamp(26px,5vw,32px);
+    letter-spacing: -1px;
+  }
+  #page-po-creation .poc-hero-content > p {
+    max-width: none;
+    font-size: 10px;
+  }
+  #page-po-creation .poc-hero-art {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 150px;
+    height: 135px;
+    opacity: .78;
+    transform: scale(.75);
+    transform-origin: right center;
+    margin-right: -28px;
+    justify-self: end;
+  }
+  #page-po-creation .poc-hero-pills {
+    gap: 5px;
+    margin-top: 11px;
+  }
+  #page-po-creation .poc-hero-pills span {
+    padding: 5px 7px;
+    font-size: 7.5px;
+  }
+  #page-po-creation .poc-hero-pills b {
+    min-width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+}
+@media (max-width: 430px) {
+  #page-po-creation .poc-hero {
+    display: block;
+    min-height: unset;
+    padding: 22px 16px 21px;
+    background-position: center, center, 62% center;
+  }
+  #page-po-creation .poc-hero-content {
+    padding-right: 0;
+  }
+  #page-po-creation .poc-hero h1 {
+    max-width: 340px;
+    font-size: 29px;
+    line-height: 1.07;
+  }
+  #page-po-creation .poc-hero-content > p {
+    font-size: 10px;
+  }
+  #page-po-creation .poc-hero-art {
+    position: absolute;
+    right: -30px;
+    bottom: -35px;
+    width: 150px;
+    height: 130px;
+    opacity: .24;
+    transform: scale(.7);
+    transform-origin: right bottom;
+    pointer-events: none;
+  }
+  #page-po-creation .poc-hero-pills {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  #page-po-creation .poc-hero-pills span {
+    font-size: 7px;
+  }
+}

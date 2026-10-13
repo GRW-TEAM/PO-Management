@@ -1,0 +1,10 @@
+TCCC GRW PO Management Hub — FAQ Hero Background Refresh
+
+Changes in this package:
+- Replaced the FAQ hero's plain purple gradient with a unique cinematic help-centre/logistics background (assets/faq-hero.webp).
+- The FAQ hero now matches the other process pages' premium photographic style, with a dark left-side text area and a distinct document/help visual to the right.
+- Removed the old CSS-built floating FAQ document illustration from the hero to avoid duplicate visuals.
+- Kept the existing FAQ wording, FAQ categories, search/filter behavior, common mistakes, resource links, and other process pages unchanged.
+- Aligned the FAQ hero to a 244px desktop minimum height and tuned the image position for narrower mobile layouts.
+
+To use: extract the ZIP, keep the grw_po_management_website folder structure intact, and open index.html in Chrome or Edge.

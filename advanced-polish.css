@@ -1,0 +1,165 @@
+/*
+  Premium interaction layer for TCCC GRW PO Management Hub.
+  Visual-only polish: no process copy or guidance text is changed here.
+  Kept CSS-only and lightweight to preserve fast local-file performance.
+*/
+:root {
+  --premium-ease: cubic-bezier(.2,.75,.25,1);
+  --premium-shadow: 0 14px 34px rgba(17,48,94,.075);
+  --premium-shadow-hover: 0 20px 42px rgba(17,48,94,.13);
+  --premium-line: rgba(211,225,245,.9);
+}
+html { scroll-behavior:smooth; scroll-padding-top:92px; }
+body { background-color:#f4f8ff; }
+body::before {
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:radial-gradient(ellipse at 0% 7%,rgba(36,123,242,.045),transparent 29%),
+             radial-gradient(ellipse at 100% 47%,rgba(224,0,37,.035),transparent 26%),
+             linear-gradient(180deg,#f7faff 0%,#f1f6ff 100%);
+}
+.topbar {
+  box-shadow:0 7px 26px rgba(18,45,89,.075);
+  border-bottom-color:rgba(218,229,245,.9);
+}
+.topbar::after {
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:2px; pointer-events:none;
+  background:linear-gradient(90deg,rgba(255,20,58,.85),rgba(43,126,245,.30) 42%,rgba(127,79,231,.22) 72%,transparent);
+  opacity:.72;
+}
+.brand { transition:transform .22s var(--premium-ease),filter .22s ease; }
+.brand:hover { transform:translateY(-1px); filter:saturate(1.06); }
+.search-wrap { transition:border-color .2s ease,box-shadow .2s ease,background .2s ease; }
+.search-wrap:focus-within {
+  border-color:#a9c8f4!important; background:#fff!important;
+  box-shadow:0 0 0 4px rgba(36,111,214,.09),0 8px 22px rgba(31,74,131,.07);
+}
+.topnav-link,.side-link,.service-action,.primary-btn,.secondary-btn,.text-action,
+.poc-template-action,.poc-resource-link,.amx-resource-placeholder,.poc-quick-guide-toggle,
+.back-top,.support-email-link,.home-mail-pill,.amx-contact-strip>a {
+  -webkit-tap-highlight-color:transparent;
+}
+button,.service-card,.poc-field,.poc-group-card,.poc-template-resource,.support-card,
+.faq-item,.panel,.amx-detail-card,.amx-not-supported,.amx-flow-shell {
+  transition-property:transform,box-shadow,border-color,background-color,filter;
+  transition-duration:.22s;
+  transition-timing-function:var(--premium-ease);
+}
+button:active,.service-action:active,.primary-btn:active,.secondary-btn:active,
+.poc-template-action:active,.amx-contact-strip>a:active { transform:translateY(1px) scale(.99); }
+:where(a,button,input,summary,[role="tab"]):focus-visible {
+  outline:3px solid rgba(35,112,222,.32);
+  outline-offset:3px;
+}
+.page-view.active { animation:premiumPageEnter .34s var(--premium-ease) both; }
+@keyframes premiumPageEnter {
+  from { opacity:.65; transform:translate3d(0,7px,0); }
+  to { opacity:1; transform:translate3d(0,0,0); }
+}
+.page-intro {
+  border-radius:22px!important;
+  box-shadow:var(--premium-shadow)!important;
+  border-color:var(--premium-line)!important;
+  overflow:hidden;
+}
+.panel,.poc-template-panel,.poc-group-card,.support-card,.faq-item {
+  border-color:var(--premium-line)!important;
+  box-shadow:0 8px 24px rgba(18,48,93,.045);
+}
+.panel:hover,.poc-template-panel:hover { box-shadow:0 12px 28px rgba(18,48,93,.07); }
+.poc-fields-area { border-radius:22px; }
+.poc-group-card {
+  border-radius:18px!important;
+  overflow:hidden;
+  box-shadow:0 7px 22px rgba(20,55,103,.045)!important;
+}
+.poc-group-card:hover {
+  border-color:rgba(161,192,238,.9)!important;
+  box-shadow:0 12px 28px rgba(20,55,103,.075)!important;
+}
+.poc-field {
+  border-radius:14px!important;
+  border-color:#e1eaf6!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(249,252,255,.94))!important;
+  box-shadow:0 3px 10px rgba(18,50,95,.025);
+}
+.poc-field:hover {
+  transform:translateY(-2px);
+  border-color:#b9d2f5!important;
+  box-shadow:0 9px 20px rgba(34,96,172,.085)!important;
+}
+.poc-field-icon { transition:transform .22s var(--premium-ease),box-shadow .22s ease; }
+.poc-field:hover .poc-field-icon { transform:translateY(-1px) scale(1.045); box-shadow:0 8px 17px rgba(32,91,165,.09); }
+.poc-badge { letter-spacing:.08px; }
+.poc-template-panel {
+  border-radius:22px!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(247,250,255,.96))!important;
+  box-shadow:0 15px 36px rgba(21,56,105,.075)!important;
+}
+.poc-template-resource {
+  border-radius:17px!important;
+  box-shadow:0 6px 17px rgba(20,54,102,.035);
+}
+.poc-template-resource:hover {
+  transform:translateY(-3px);
+  box-shadow:0 14px 27px rgba(20,54,102,.085)!important;
+}
+.poc-template-action,.poc-resource-link,.poc-quick-guide-toggle,.amx-resource-placeholder,
+.support-email-link,.support-mail-notice>a,.home-mail-pill,.amx-contact-strip>a {
+  transition:transform .2s var(--premium-ease),box-shadow .2s ease,border-color .2s ease,filter .2s ease;
+}
+.poc-template-action:hover,.poc-resource-link:hover,.poc-quick-guide-toggle:hover,
+.amx-resource-placeholder:hover,.support-email-link:hover,.support-mail-notice>a:hover {
+  transform:translateY(-2px);
+  filter:saturate(1.07);
+}
+.poc-resource-link { border-radius:10px; }
+.poc-macro-help { border-radius:18px!important; box-shadow:0 7px 22px rgba(18,50,92,.04); }
+.poc-macro-help>summary { transition:background .2s ease; }
+.poc-macro-help>summary:hover { background:rgba(244,248,255,.78); }
+.poc-macro-shot { transition:transform .22s var(--premium-ease),box-shadow .22s ease; }
+.poc-macro-shot:hover { transform:translateY(-2px); box-shadow:0 12px 24px rgba(22,54,99,.075); }
+#page-amendments .amx-hero { box-shadow:0 21px 46px rgba(10,39,88,.20),inset 0 1px rgba(255,255,255,.18); }
+#page-amendments .amx-flow-shell {
+  border-color:rgba(207,224,247,.95)!important;
+  box-shadow:0 12px 32px rgba(24,61,116,.065),inset 0 1px rgba(255,255,255,.95)!important;
+}
+#page-amendments .amx-flow-item { min-width:0; }
+#page-amendments .amx-detail-card {
+  box-shadow:0 14px 32px rgba(20,52,102,.075),inset 0 1px rgba(255,255,255,.9)!important;
+}
+#page-amendments .amx-not-supported {
+  box-shadow:0 13px 29px rgba(164,34,65,.075),inset 0 1px rgba(255,255,255,.8)!important;
+}
+#page-amendments .amx-blocked-grid>div { transition:transform .2s var(--premium-ease),box-shadow .2s ease; }
+#page-amendments .amx-blocked-grid>div:hover { transform:translateX(3px); box-shadow:0 8px 17px rgba(168,28,61,.07); }
+#page-amendments .amx-contact-strip { box-shadow:0 8px 22px rgba(26,73,129,.055); }
+#page-amendments .amx-contact-strip>a:hover,.home-mail-pill:hover { transform:translateY(-2px); filter:saturate(1.08); }
+#page-closure .check-option { transition:transform .18s var(--premium-ease),border-color .18s ease,box-shadow .18s ease; }
+#page-closure .check-option:hover { transform:translateY(-1px); box-shadow:0 8px 17px rgba(20,65,116,.06); }
+#page-closure .check-option.checked { box-shadow:inset 3px 0 #21a56e,0 5px 15px rgba(20,130,83,.055); }
+#page-faqs .faq-item { transition:box-shadow .2s ease,border-color .2s ease,transform .2s var(--premium-ease); }
+#page-faqs .faq-item:hover { border-color:#c5d9f5!important; box-shadow:0 10px 23px rgba(23,61,115,.065); }
+#page-support .support-card { transition:transform .22s var(--premium-ease),box-shadow .22s ease,border-color .22s ease; }
+#page-support .support-card:hover { transform:translateY(-4px); box-shadow:0 16px 30px rgba(20,59,113,.09); border-color:#ccddf5; }
+a[target="_blank"] { text-underline-offset:3px; }
+a[target="_blank"]:not(.poc-template-action):not(.amx-resource-placeholder):not(.poc-macro-image-link):hover { text-decoration-color:currentColor; }
+.page-footer { border-top:1px solid rgba(218,229,244,.72); }
+.toast { box-shadow:0 14px 34px rgba(14,35,72,.20); backdrop-filter:blur(12px); }
+@media (max-width:900px) {
+  .page-intro { border-radius:18px!important; }
+  .poc-template-panel { border-radius:18px!important; }
+}
+@media (max-width:560px) {
+  .poc-template-resource:hover,.poc-field:hover,#page-support .support-card:hover { transform:none; }
+  #page-amendments .amx-blocked-grid>div:hover { transform:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .page-view.active { animation:none!important; }
+  button,.service-card,.poc-field,.poc-group-card,.poc-template-resource,.support-card,
+  .faq-item,.panel,.amx-detail-card,.amx-not-supported,.amx-flow-shell,
+  .poc-template-action,.poc-resource-link,.poc-quick-guide-toggle,.back-top,
+  .support-email-link,.home-mail-pill,.amx-contact-strip>a,.poc-field-icon {
+    transition:none!important;
+  }
+}

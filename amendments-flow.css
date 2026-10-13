@@ -1,0 +1,146 @@
+/* Approved Idea 2: premium horizontal step-flow for PO Amendments / Right Sizing.
+   Kept in a dedicated page-scoped file so the homepage and PO Creation styles remain untouched. */
+#page-amendments .amx-choose-section { margin: 18px 0 22px; }
+#page-amendments .amx-section-heading { align-items: end; margin: 0 2px 13px; }
+#page-amendments .amx-section-kicker { letter-spacing: 1.5px; font-size: 9px; font-weight: 900; color: #176de1; }
+#page-amendments .amx-section-heading h2 { color: #112f5a; margin: 4px 0 4px; font-size: clamp(21px, 2vw, 28px); letter-spacing: -.55px; }
+#page-amendments .amx-section-heading p { margin: 0; color: #647894; font-size: 12px; }
+#page-amendments .amx-section-count { white-space: nowrap; border: 1px solid #d4e3ff; background: linear-gradient(135deg,#edf5ff,#fff); color: #1d63bf; border-radius: 999px; padding: 7px 12px; font-size: 10px; font-weight: 800; }
+#page-amendments .amx-flow-shell { position: relative; overflow: hidden; border: 1px solid #dce7f6; border-radius: 22px; padding: 18px 16px 12px; background: radial-gradient(circle at 5% 0%, rgba(48,133,255,.09), transparent 25%), radial-gradient(circle at 96% 100%, rgba(184,84,255,.08), transparent 23%), linear-gradient(112deg,#fff 0%,#f8fbff 52%,#fff8fb 100%); box-shadow: 0 13px 28px rgba(28,65,124,.075), inset 0 1px 0 #fff; }
+#page-amendments .amx-flow-shell:before { content:""; pointer-events:none; position:absolute; top:-80px; left:-10%; width:120%; height:130px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.72),transparent); transform:rotate(-4deg); animation: amxFlowShimmer 8s ease-in-out infinite; }
+#page-amendments .amx-flow-track { position: relative; z-index: 1; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:8px; align-items:stretch; }
+#page-amendments .amx-flow-item { position:relative; min-width:0; display:flex; align-items:stretch; }
+#page-amendments .amx-flow-link { position:absolute; z-index:3; right:-12px; top:34px; color:#3982ee; font-size:20px; font-weight:900; line-height:1; text-shadow:0 2px 6px rgba(57,130,238,.16); pointer-events:none; }
+#page-amendments .amx-topic.amx-flow-step { box-sizing:border-box; position:relative; isolation:isolate; overflow:hidden; flex:1 1 auto; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:9px; min-width:0; min-height:138px; padding:14px 8px 12px; border:1px solid color-mix(in srgb,var(--amx-color,#2672cf) 24%,white); border-top:3px solid var(--amx-color,#2672cf); border-radius:17px; background:linear-gradient(150deg,color-mix(in srgb,var(--amx-color,#2672cf) 10%,white) 0%,color-mix(in srgb,var(--amx-color,#2672cf) 5%,white) 52%,rgba(255,255,255,.98) 100%); color:#14325e; text-align:center; cursor:pointer; box-shadow:0 7px 18px color-mix(in srgb,var(--amx-color,#2672cf) 8%,transparent),inset 0 1px #fff; transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease,background .24s ease; }
+#page-amendments .amx-topic.amx-flow-step:before { content:""; position:absolute; z-index:-1; inset:0; border-radius:inherit; opacity:0; background:linear-gradient(112deg,transparent 10%,rgba(255,255,255,.95) 46%,transparent 73%); transform:translateX(-110%); transition:transform .65s ease,opacity .2s ease; pointer-events:none; }
+#page-amendments .amx-topic.amx-flow-step:after { content:""; position:absolute; z-index:-1; width:100px; height:80px; right:-35px; bottom:-33px; border-radius:50%; background:radial-gradient(circle,color-mix(in srgb,var(--amx-color) 17%,transparent),transparent 70%); pointer-events:none; }
+#page-amendments .amx-flow-index { position:absolute; left:8px; top:8px; width:23px; height:23px; display:grid; place-items:center; border-radius:50%; color:#fff; background:linear-gradient(145deg,color-mix(in srgb,var(--amx-color) 72%,white),var(--amx-color)); box-shadow:0 4px 9px color-mix(in srgb,var(--amx-color) 22%,transparent); font-size:9px; font-weight:900; }
+#page-amendments .amx-topic.amx-flow-step .amx-topic-symbol { display:grid; place-items:center; width:48px; height:48px; flex:0 0 48px; margin:3px 0 0; border-radius:50%; border:1px solid rgba(255,255,255,.96); color:var(--amx-color); background:radial-gradient(circle at 32% 25%,#fff 0%,var(--amx-icon-bg) 54%,color-mix(in srgb,var(--amx-color) 10%,white) 100%); box-shadow:0 6px 14px color-mix(in srgb,var(--amx-color) 13%,transparent),inset 0 1px #fff; font-size:22px; font-weight:900; line-height:1; transition:transform .25s ease,box-shadow .25s ease; }
+#page-amendments .amx-flow-step .amx-topic-copy { display:grid; gap:4px; min-width:0; flex:0 0 auto; justify-items:center; align-content:start; position:relative; z-index:1; }
+#page-amendments .amx-flow-step .amx-topic-copy strong { color:#15335d; font-size:11px; line-height:1.23; font-weight:850; overflow-wrap:anywhere; }
+#page-amendments .amx-flow-step .amx-topic-copy small { color:#647894; font-size:9px; line-height:1.28; }
+#page-amendments .amx-flow-step .amx-topic-arrow { display:none; }
+#page-amendments .amx-topic.amx-flow-step:hover { transform:translateY(-4px); border-color:var(--amx-color); box-shadow:0 15px 25px color-mix(in srgb,var(--amx-color) 16%,transparent),inset 0 1px #fff; }
+#page-amendments .amx-topic.amx-flow-step:hover:before { opacity:.9; transform:translateX(110%); }
+#page-amendments .amx-topic.amx-flow-step:hover .amx-topic-symbol { transform:translateY(-2px) scale(1.06); box-shadow:0 9px 17px color-mix(in srgb,var(--amx-color) 23%,transparent),inset 0 1px #fff; }
+#page-amendments .amx-topic.amx-flow-step.active { transform:translateY(-3px); border-color:var(--amx-color); background:linear-gradient(150deg,color-mix(in srgb,var(--amx-color) 18%,white),color-mix(in srgb,var(--amx-color) 9%,white) 58%,#fff 100%); box-shadow:0 0 0 2px color-mix(in srgb,var(--amx-color) 23%,transparent),0 13px 22px color-mix(in srgb,var(--amx-color) 17%,transparent),inset 0 1px #fff; }
+#page-amendments .amx-topic.amx-flow-step.active .amx-topic-symbol { color:#fff; background:linear-gradient(145deg,color-mix(in srgb,var(--amx-color) 55%,white),var(--amx-color)); box-shadow:0 8px 18px color-mix(in srgb,var(--amx-color) 26%,transparent),inset 0 1px rgba(255,255,255,.5); }
+#page-amendments .amx-topic.amx-flow-step:focus-visible { outline:3px solid #143f77; outline-offset:3px; }
+#page-amendments .amx-flow-foot { display:flex; align-items:center; gap:8px; position:relative; z-index:1; margin-top:13px; padding:10px 4px 0; border-top:1px solid #e5edf8; color:#617693; font-size:10px; }
+#page-amendments .amx-flow-status-dot { width:7px; height:7px; flex:0 0 7px; border-radius:50%; background:#1ca66a; box-shadow:0 0 0 4px rgba(28,166,106,.10); }
+#page-amendments .amx-flow-count { margin-left:auto; white-space:nowrap; color:#2d66bb; font-size:9px; font-weight:800; }
+#page-amendments .amx-decision-split { margin-top:21px; gap:18px; }
+#page-amendments .amx-guidance-heading { margin-bottom:11px; }
+#page-amendments .amx-not-supported { align-self:start; }
+#page-amendments .amx-contact-strip { margin-top:18px; }
+@keyframes amxFlowShimmer { 0%,100% { opacity:.25; transform:translateX(-3%) rotate(-4deg); } 50% { opacity:.72; transform:translateX(3%) rotate(-4deg); } }
+
+@media (max-width: 1180px) {
+  #page-amendments .amx-flow-shell { padding:15px 12px 11px; }
+  #page-amendments .amx-flow-track { display:flex; width:max-content; min-width:100%; gap:7px; }
+  #page-amendments .amx-flow-item { flex:0 0 135px; }
+  #page-amendments .amx-flow-link { right:-11px; top:35px; }
+  #page-amendments .amx-topic.amx-flow-step { min-height:132px; }
+  #page-amendments .amx-flow-shell { overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:thin; scrollbar-color:#bdd2f1 transparent; }
+  #page-amendments .amx-flow-track { padding:3px 3px 7px; }
+  #page-amendments .amx-decision-split { grid-template-columns:minmax(0,1fr); }
+  #page-amendments .amx-not-supported { margin-top:0; }
+}
+@media (max-width: 650px) {
+  #page-amendments .amx-hero { padding:21px 17px 22px; }
+  #page-amendments .amx-hero h1 { font-size:clamp(27px,7vw,35px); line-height:1.08; }
+  #page-amendments .amx-hero-pills { flex-wrap:wrap; }
+  #page-amendments .amx-choose-section { margin-top:15px; }
+  #page-amendments .amx-section-heading { align-items:flex-start; gap:9px; }
+  #page-amendments .amx-section-heading h2 { font-size:21px; }
+  #page-amendments .amx-section-heading p { font-size:11px; line-height:1.4; }
+  #page-amendments .amx-flow-shell { margin-inline:-1px; border-radius:17px; padding:12px 10px 10px; }
+  #page-amendments .amx-flow-item { flex-basis:124px; }
+  #page-amendments .amx-topic.amx-flow-step { min-height:124px; padding:12px 7px 10px; border-radius:15px; }
+  #page-amendments .amx-topic.amx-flow-step .amx-topic-symbol { width:43px; height:43px; flex-basis:43px; font-size:20px; }
+  #page-amendments .amx-flow-step .amx-topic-copy strong { font-size:10.5px; }
+  #page-amendments .amx-flow-step .amx-topic-copy small { font-size:8.5px; }
+  #page-amendments .amx-flow-foot { align-items:flex-start; font-size:9px; line-height:1.4; }
+  #page-amendments .amx-flow-count { font-size:8px; }
+  #page-amendments .amx-decision-split { margin-top:16px; }
+  #page-amendments .amx-guidance-heading h2 { font-size:17px; }
+  #page-amendments .amx-detail-top { padding:16px; }
+  #page-amendments .amx-detail-body { padding:14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #page-amendments .amx-flow-shell:before { animation:none !important; }
+  #page-amendments .amx-topic.amx-flow-step, #page-amendments .amx-topic.amx-flow-step:before, #page-amendments .amx-topic.amx-flow-step .amx-topic-symbol { transition:none !important; }
+}
+
+/* Final visual tuning: emphasize the connected journey, not seven separate cards. */
+#page-amendments .amx-flow-shell {
+  padding-top: 15px;
+  background: radial-gradient(circle at 8% 0%,rgba(48,133,255,.055),transparent 24%),radial-gradient(circle at 95% 100%,rgba(184,84,255,.05),transparent 23%),linear-gradient(110deg,#fff 0%,#fbfdff 52%,#fffafd 100%);
+}
+#page-amendments .amx-topic.amx-flow-step {
+  min-height: 126px;
+  padding: 9px 6px 10px;
+  border: 1px solid transparent;
+  border-top: 3px solid transparent;
+  border-radius: 16px;
+  background: transparent;
+  box-shadow: none;
+}
+#page-amendments .amx-topic.amx-flow-step:after { opacity:.55; }
+#page-amendments .amx-flow-index { width:21px; height:21px; left:8px; top:8px; font-size:8px; opacity:.96; }
+#page-amendments .amx-topic.amx-flow-step .amx-topic-symbol {
+  width:52px; height:52px; flex-basis:52px; margin-top:6px; border-radius:50%;
+  box-shadow:0 7px 16px color-mix(in srgb,var(--amx-color) 17%,transparent),inset 0 1px #fff;
+}
+#page-amendments .amx-topic.amx-flow-step.active {
+  border-color:color-mix(in srgb,var(--amx-color) 28%,white);
+  border-top-color:var(--amx-color);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--amx-color) 9%,white),rgba(255,255,255,.82));
+  box-shadow:0 8px 20px color-mix(in srgb,var(--amx-color) 12%,transparent),inset 0 1px white;
+}
+#page-amendments .amx-topic.amx-flow-step.active .amx-topic-symbol {
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--amx-color) 10%,transparent),0 10px 20px color-mix(in srgb,var(--amx-color) 24%,transparent),inset 0 1px rgba(255,255,255,.56);
+}
+#page-amendments .amx-topic.amx-flow-step:hover:not(.active) {
+  border-color:color-mix(in srgb,var(--amx-color) 18%,white);
+  border-top-color:color-mix(in srgb,var(--amx-color) 56%,white);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--amx-color) 5%,white),rgba(255,255,255,.76));
+  box-shadow:0 8px 18px color-mix(in srgb,var(--amx-color) 10%,transparent);
+}
+#page-amendments .amx-flow-link { right:-12px; top:39px; color:#4e8dee; font-size:19px; }
+#page-amendments .amx-flow-foot { margin-top:9px; padding-top:9px; }
+@media (max-width:1180px) {
+  #page-amendments .amx-topic.amx-flow-step { min-height:122px; padding:9px 6px; }
+  #page-amendments .amx-topic.amx-flow-step .amx-topic-symbol { width:49px; height:49px; flex-basis:49px; }
+}
+@media (max-width:650px) {
+  #page-amendments .amx-topic.amx-flow-step { min-height:118px; padding:9px 5px; }
+  #page-amendments .amx-topic.amx-flow-step .amx-topic-symbol { width:45px; height:45px; flex-basis:45px; margin-top:5px; }
+  #page-amendments .amx-flow-link { top:35px; }
+}
+
+#page-amendments .amx-flow-swipe-hint { display:none; color:#2369c7; font-weight:800; font-size:9px; white-space:nowrap; margin-left:auto; }
+#page-amendments .amx-flow-track { scroll-snap-type:x proximity; }
+#page-amendments .amx-flow-item { scroll-snap-align:start; }
+@media (max-width:1180px) {
+  #page-amendments .amx-flow-swipe-hint { display:inline-flex; align-items:center; }
+  #page-amendments .amx-flow-foot { flex-wrap:wrap; }
+}
+@media (max-width:650px) {
+  #page-amendments .amx-flow-foot { display:grid; grid-template-columns:7px minmax(0,1fr); gap:7px; }
+  #page-amendments .amx-flow-note { min-width:0; line-height:1.4; }
+  #page-amendments .amx-flow-swipe-hint { grid-column:2; margin-left:0; }
+}
+
+/* Supplied Payment Terms Exceptions resource */
+#page-amendments .amx-payment-pdf-link{display:flex;align-items:center;gap:12px;max-width:680px;text-decoration:none;border-style:solid;border-color:#f0d9b7;background:linear-gradient(105deg,#fff8ed,#fffdf9);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+#page-amendments .amx-payment-pdf-link:hover{transform:translateY(-2px);border-color:#e6b86e;box-shadow:0 8px 20px rgba(183,119,31,.11)}
+#page-amendments .amx-payment-pdf-link .amx-resource-icon{font-size:11px;font-weight:900;letter-spacing:.2px;background:#ffe7c5;color:#9b5b08}
+#page-amendments .amx-payment-resource-copy{display:grid;gap:4px;min-width:0;flex:1}
+#page-amendments .amx-payment-resource-copy strong{font-size:12px;color:#19385f}
+#page-amendments .amx-payment-resource-copy small{font-size:10px;line-height:1.45;color:#6f8097}
+#page-amendments .amx-payment-resource-copy .amx-payment-confidential{color:#9a620e;font-weight:800}
+#page-amendments .amx-download-pill{flex:0 0 auto;padding:8px 11px;border-radius:999px;background:linear-gradient(110deg,#f4a82f,#e87a0b);color:#fff;font-size:10px;font-weight:850;white-space:nowrap;box-shadow:0 4px 10px rgba(212,126,18,.18)}
+#page-amendments .amx-payment-note{display:flex;gap:8px;align-items:flex-start;max-width:680px;margin-top:10px;padding:10px 12px;border-radius:11px;border:1px solid #e8edf5;background:#f8faff;color:#60738d;font-size:10px;line-height:1.55}
+#page-amendments .amx-payment-note strong{color:#17365d;white-space:nowrap}
+@media(max-width:600px){#page-amendments .amx-payment-pdf-link{align-items:flex-start;flex-wrap:wrap;gap:9px;padding:10px}#page-amendments .amx-payment-resource-copy{flex-basis:calc(100% - 58px)}#page-amendments .amx-download-pill{margin-left:51px}#page-amendments .amx-payment-note{display:grid;gap:4px}}
